@@ -1,8 +1,8 @@
 import {
   CarOutlined,
   ClockCircleOutlined,
-  CustomerServiceOutlined,
   SafetyOutlined,
+  TrophyOutlined,
 } from '@ant-design/icons'
 import { ADVANTAGES } from '../constants/content'
 import './Advantages.css'
@@ -11,15 +11,17 @@ const advantageIcons = {
   shield: SafetyOutlined,
   clock: ClockCircleOutlined,
   car: CarOutlined,
-  headset: CustomerServiceOutlined,
+  trophy: TrophyOutlined,
 }
 
 export function Advantages() {
   return (
     <section id="advantages" className="advantages">
       <div className="container">
-        <p className="section-label">Наши преимущества</p>
-        <h2 className="section-title">Почему клиенты выбирают нас</h2>
+        <div className="advantages__header">
+          <p className="section-label">Наши преимущества</p>
+          <h2 className="section-title">Почему клиенты выбирают нас</h2>
+        </div>
 
         <div className="advantages__grid">
           {ADVANTAGES.map((item) => {

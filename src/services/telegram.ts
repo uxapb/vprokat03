@@ -2,9 +2,9 @@ export interface BookingFormData {
   name: string
   phone: string
   dates: string
-  destination: string
-  leavingCity: string
+  travelOutsideCity: string
   drivingExperience: string
+  comment?: string
 }
 
 const BOOKING_API_URL = import.meta.env.VITE_BOOKING_API_URL ?? '/api/booking'

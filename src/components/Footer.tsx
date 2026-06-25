@@ -1,4 +1,4 @@
-import { NAV_LINKS, FOOTER_SERVICES, PHONE_DISPLAY, PHONE_HREF } from '../constants/content'
+import { NAV_LINKS, FOOTER_SERVICES, PHONE_DISPLAY, PHONE_HREF, EMAIL, ADDRESS } from '../constants/content'
 import './Footer.css'
 
 export function Footer() {
@@ -35,7 +35,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="footer__col" id="conditions">
+        <div className="footer__col">
           <h4 className="footer__heading">Услуги</h4>
           <ul className="footer__links">
             {FOOTER_SERVICES.map((service) => (
@@ -53,9 +53,9 @@ export function Footer() {
               <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
             </li>
             <li>
-              <a href="mailto:info@vprokat.ru">info@vprokat.ru</a>
+              <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
             </li>
-            <li>г. Улан-Удэ, ул. Ленина, 12</li>
+            <li>{ADDRESS}</li>
           </ul>
         </div>
       </div>

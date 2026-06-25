@@ -6,11 +6,12 @@ import priusHybrid from '../assets/cars/prius06.jpg'
 
 export const PHONE_HREF = 'tel:89140570842'
 export const PHONE_DISPLAY = '8 (914) 057-08-42'
+export const EMAIL = 'Bprokat03@yandex.ru'
+export const ADDRESS = 'г. Улан-Удэ, ул. Сахьяновой, 11'
 
 export const NAV_LINKS = [
   { label: 'Автомобили', href: '#cars' },
   { label: 'Преимущества', href: '#advantages' },
-  { label: 'Условия', href: '#conditions' },
   { label: 'Отзывы', href: '#reviews' },
   { label: 'Контакты', href: '#contacts' },
 ]
@@ -25,59 +26,119 @@ export const ADVANTAGES = [
   {
     icon: 'shield',
     title: 'Честные условия',
-    description: 'Прозрачные тарифы без скрытых платежей и неожиданных доплат при получении авто.',
+    description: 'Никаких скрытых платежей и навязанных услуг. Всё прозрачно и понятно.',
   },
   {
     icon: 'clock',
     title: 'Быстрая подача',
-    description: 'Доставим автомобиль в удобное для вас место уже через 30 минут после оформления.',
+    description: 'Подача автомобиля в удобное для вас место в среднем за 30 минут.',
   },
   {
     icon: 'car',
     title: 'Современный автопарк',
-    description: 'Только исправные автомобили с актуальным техническим обслуживанием и чистым салоном.',
+    description: 'Только ухоженные, технически исправные автомобили разных классов.',
   },
   {
-    icon: 'headset',
-    title: 'Поддержка 24/7',
-    description: 'Наши менеджеры всегда на связи и готовы помочь в любой ситуации на дороге.',
+    icon: 'trophy',
+    title: 'Опыт работы',
+    description:
+      'Более 5 лет профессионально оказываем услугу по аренде автомобилей в г. Улан-Удэ. Более 1000 довольных клиентов.',
   },
 ]
 
 export const CARS = [
-  { id: 'avensis06', image: avensisComfort, layout: 'full' as const, badge: 'Toyota Avensis, 2006' },
-  { id: 'fit03', image: fitEconomy, layout: 'rect' as const, badge: 'Honda Fit, 2003' },
-  { id: 'avensis03', image: avensisDetail, layout: 'square' as const, badge: 'Toyota Avensis, 2003' },
-  { id: 'avensis07', image: avensisBusiness, layout: 'square' as const, badge: 'Toyota Avensis, 2007' },
-  { id: 'prius06', image: priusHybrid, layout: 'rect' as const, badge: 'Toyota Prius, 2006' },
-]
+  {
+    id: 'avensis06',
+    name: 'Toyota Avensis',
+    year: 2006,
+    image: avensisComfort,
+    steering: 'Левый',
+    doors: 4,
+    transmission: 'Механика',
+    seats: 5,
+    price: 2500,
+  },
+  {
+    id: 'fit03',
+    name: 'Honda Fit',
+    year: 2003,
+    image: fitEconomy,
+    steering: 'Левый',
+    doors: 5,
+    transmission: 'Автомат',
+    seats: 5,
+    price: 2500,
+  },
+  {
+    id: 'avensis03',
+    name: 'Toyota Avensis',
+    year: 2003,
+    image: avensisDetail,
+    steering: 'Левый',
+    doors: 4,
+    transmission: 'Механика',
+    seats: 5,
+    price: 2500,
+  },
+  {
+    id: 'avensis07',
+    name: 'Toyota Avensis',
+    year: 2007,
+    image: avensisBusiness,
+    steering: 'Левый',
+    doors: 4,
+    transmission: 'Механика',
+    seats: 5,
+    price: 2500,
+  },
+  {
+    id: 'prius06',
+    name: 'Toyota Prius',
+    year: 2006,
+    image: priusHybrid,
+    steering: 'Левый',
+    doors: 4,
+    transmission: 'Автомат',
+    seats: 5,
+    price: 2500,
+  },
+] as const
+
+export type Car = (typeof CARS)[number]
+
+const GALLERY_POOL = [avensisComfort, fitEconomy, avensisDetail, avensisBusiness, priusHybrid]
+
+export function getCarGallery(car: Car): string[] {
+  const others = GALLERY_POOL.filter((img) => img !== car.image)
+  return [car.image, others[0], others[1]]
+}
 
 export const TESTIMONIALS = [
   {
     id: 1,
     name: 'Алексей К.',
-    date: '12 мая 2024',
+    date: '28 мая 2026',
     text: 'Отличный сервис! Брал машину на выходные, всё прошло быстро и без проблем. Автомобиль был чистый и в отличном состоянии.',
     avatar: 'АК',
   },
   {
     id: 2,
     name: 'Мария С.',
-    date: '28 апреля 2024',
+    date: '9 февраля 2026',
     text: 'Удобно, что можно заказать подачу авто к дому. Менеджеры вежливые, условия аренды понятные. Рекомендую!',
     avatar: 'МС',
   },
   {
     id: 3,
     name: 'Дмитрий В.',
-    date: '15 апреля 2024',
+    date: '15 октября 2025',
     text: 'Арендовал авто для деловой поездки. Всё чётко, без лишней бюрократии. Цены адекватные, буду обращаться ещё.',
     avatar: 'ДВ',
   },
   {
     id: 4,
     name: 'Елена П.',
-    date: '3 апреля 2024',
+    date: '3 августа 2025',
     text: 'Первый раз брала машину в прокат — переживала, но всё оказалось проще, чем думала. Спасибо за помощь!',
     avatar: 'ЕП',
   },

@@ -1,6 +1,6 @@
 import { ArrowRightOutlined, ClockCircleOutlined, SafetyOutlined, ToolOutlined } from '@ant-design/icons'
 import { Button } from 'antd'
-import bannerCar from '../assets/banner_png.png'
+import bannerCar from '../assets/banner00.png'
 import { HERO_FEATURES } from '../constants/content'
 import './Hero.css'
 
@@ -54,8 +54,6 @@ export function Hero({ onBookClick }: HeroProps) {
             className="hero__car-image"
             src={bannerCar}
             alt="Автомобиль в аренду"
-            width={520}
-            height={325}
           />
         </div>
       </div>

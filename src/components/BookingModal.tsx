@@ -78,16 +78,8 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
         </Form.Item>
 
         <Form.Item
-          name="destination"
-          label="Куда поедете?"
-          rules={[{ required: true, message: 'Укажите направление поездки' }]}
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          name="leavingCity"
-          label="Будете выезжать за пределы города?"
+          name="travelOutsideCity"
+          label="Будете выезжать за пределы города? Если да, то куда?"
           rules={[{ required: true, message: 'Укажите, планируете ли выезд за город' }]}
         >
           <Input />
@@ -99,6 +91,10 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
           rules={[{ required: true, message: 'Укажите стаж вождения' }]}
         >
           <Input />
+        </Form.Item>
+
+        <Form.Item name="comment" label="Комментарий">
+          <Input.TextArea rows={3} placeholder="Дополнительная информация (необязательно)" />
         </Form.Item>
 
         <Form.Item className="booking-modal__submit">

@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 40px;
-  padding: 0 0 48px;
+  padding: 0 24px 30px 24px;
 }
 
 .footer__logo {
@@ -124,6 +124,6 @@
   .footer__inner {
     grid-template-columns: 1fr;
     gap: 32px;
-    padding: 0 0 32px;
+    padding: 0 24px 32px 24px;
   }
 }
